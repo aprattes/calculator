@@ -22,6 +22,10 @@ public class Calculator {
         return num1 / num2;
     }
 
+    public double toThePowerOf(double num1, double num2) {
+        return Math.pow(num1, num2);
+    }
+
     public double calculate(double num1, double num2, char operator) throws InvalidOperatorException {
         double result = 0.0;
         switch (operator) {
@@ -30,6 +34,9 @@ public class Calculator {
                 break;
             case '-':
                 result = subtract(num1, num2);
+                break;
+            case '^':
+                result = toThePowerOf(num1, num2);
                 break;
             case '*':
                 result = multiply(num1, num2);

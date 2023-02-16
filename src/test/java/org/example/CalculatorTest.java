@@ -31,4 +31,14 @@ public class CalculatorTest {
     public void testDivide() throws InvalidOperatorException {
         Assert.assertEquals(2.0, calculator.calculate(8.0,4.0, '/'), 0.0);
     }
+
+    @Test
+    public void testPow() throws InvalidOperatorException {
+        Assert.assertEquals(64.0, calculator.calculate(8.0,2.0, '^'), 0.0);
+    }
+
+    @Test(expected = InvalidOperatorException.class)
+    public void testInvalidParameter() throws InvalidOperatorException {
+        calculator.calculate(8.0,2.0, 'a');
+    }
 }
